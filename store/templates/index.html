@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <title>Document</title>
+</head>
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    background-size: cover;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+ul{
+    list-style: none;
+}
+
+.header{
+    width: 100%;
+    height: 60vh;
+    background-color: #fff;
+    position: absolute;
+}
+
+.header .navbar{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    margin-top: 40px;
+}
+
+.logo{
+    
+   
+	 padding: 10px;
+	 top: 4%;
+     margin: 100px;
+	 
+ 
+}
+
+.login-btn ul li{
+    display: inline-block;
+    padding: 0 20px;
+    cursor: pointer;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 80px;
+    align-items: center;
+    margin: 30px;
+    
+    
+}
+.login-btn  li:hover{
+    background-color: #ffa037;
+    border-radius: 30px;
+    transition: 0.2s ease-in-out;
+    
+    
+}
+
+
+
+.banner{
+    width: 80%;
+    height: 70%;
+    position: absolute;
+    top: 25%;
+    left: 100px;
+    color: #fff;
+}
+
+.photo{
+  position: absolute;
+  top:5%;
+  left: 30%;
+
+}
+
+
+
+.app-text{
+    width: 50%;
+    float: left;
+    padding-left: 50px;
+}
+
+.app-text h3{
+    margin-top: 100px;
+    font-size: 17px;
+    color: #000;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.app-text h1{
+    font-size: 51px;
+    position: relative;
+    color: #000;
+    margin-top: 30px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.app-text p{
+    font-size: 19px;
+    margin: 30px 30px 30px 0;
+    letter-spacing: 1px;
+    color: #000;
+    padding-right: 250px;
+}
+
+.btn-group{
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+ .signup-btn{
+    cursor: pointer;
+    display: block;
+    color: #000;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 32px;
+    background-color: #ffa037;
+    padding: 15px 50px;
+}
+
+
+
+.play-btn-inner{
+    height: 50px;
+    width: 50px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    background-color: #000;
+}
+
+.play-btn-inner i{
+    padding: 15px 19px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.about-services{
+    position: absolute;
+    top: 155%;
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+    padding: 0 300px;
+}
+
+.about-services ul{
+    display: inline-flex;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.about-services ul li{
+    margin: 0 50px;
+    cursor: pointer;
+}
+
+.about-services ul li img{
+    width: 120px;
+    height: auto;
+}
+
+.about-services ul li h1{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.about-services ul li p{
+    font-size: 15px;
+    margin-top: 20px;
+    font-weight: 700;
+}
+
+.social-icons{
+    position: fixed;
+    right: 30px;
+    top: 30%;
+}
+
+.social-icons ul li{
+    margin-top: 5px;
+    text-align: center;
+}
+
+.social-icons ul li a{
+    color: #000;
+    padding: 10px;
+    display: block;
+    font-size: 29px;
+}
+
+.social-icons ul li a:hover{
+    background-color: #201a1a;
+    color: #fff;
+    transition: 0.7s ease-out;
+    border-radius: 15px;
+    font-size: 40px;
+}
+
+
+</style>
+<body>
+    <div class="header">
+        <div class="navbar">
+            <div class="logo">
+                <a href="/index"><video width="250" height="250" autoplay muted>
+                   <source src="{{logov.video.url}}" type="video/mp4">
+                </video></a>
+            </div>
+            <div class="login-btn">
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/home"> PREDICTION</a></li>
+                    <li><a href="/store">STORE</a></li>
+                    <li>CONTACT</li>
+                    <li><a href="/store">LOGIN</a></li>
+                </ul>
+            </div>
+            
+        </div>
+
+        <div class="banner">
+            <div class="app-text">
+                <h3>all about healthcare</h3>
+                <h1>Ayucare<br>Objective</h1>
+                <p>To provide better health to prepare at anytime and anywhere in the world in a more 
+                   economic and patient friendly manner. To increase patient care efficiency, there arises a 
+                   need to improve the health monitoring system. </p>
+   
+                <div class="btn-group">
+                    {% if not request.session.customer %}
+                    <div class="signup-btn">
+                        <a href="/signin"> Sign up now </a>
+                   </div>
+                    {% endif %}
+                </div>
+   
+                   <div class="photo"> <img src="{{banner.image.url}}" width="1000px" height="600px">  
+                   </div> 
+                    
+                
+            </div>
+            
+        </div>
+        
+
+        <div class="about-services">
+            <ul>
+                <li>
+                    <a href="/home"><img src="{{prediction.image.url}}"></a>
+                    <h1>Disease Prediction</h1>
+                    <p>A user can select symptoms and get predicted disease for the same.</p>
+                </li>
+                <li>
+                    <a href="/store"><img src="{{shop.image.url}}"></a>
+                    <h1>Health Shopping</h1>
+                    <p>But in today’s market where everything is online and just on one touch, still finding the 
+                       proper herb and buying it is not easy. So  here it is.
+                       </p>
+                </li>
+                <li>
+                    <img src="{{business.image.url}}">
+                    <h1>Bussiness Role </h1>
+                    <p>A platform for local licensed vendors to sell their herbs and fruits.
+                   </p>
+                </li>
+            </ul>
+        </div>
+   
+        <div class="social-icons">
+            <ul>
+               <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+               <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+               <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+               <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+            </ul>
+        </div>
+       </div>
+   </body>
+
+</body>
+</html>
